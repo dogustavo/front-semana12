@@ -18,8 +18,12 @@
 </head>
 
 <body>
-
-  <main id="root"></main>
+  <nav>
+    <a href=" index.html">Voltar</a>
+  </nav>
+  <main id="root">
+    <p id="loading">Carregando...</p>
+  </main>
 
 
   <script>
@@ -28,11 +32,14 @@
       const data = await response.json()
 
       const root = document.getElementById('root')
+      const loading = document.getElementById('loading')
+
 
       data.forEach(person => {
         const image = document.createElement('img')
         image.src = person.img
         root.appendChild(image)
+        loading.style.display = 'none';
       });
     }
 

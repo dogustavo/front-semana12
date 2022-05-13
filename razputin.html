@@ -6,16 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    main {}
-  </style>
-
   <title>Razputin</title>
 </head>
 
 <body>
 
-  <main id="root"></main>
+  <nav>
+    <a href=" index.html">Voltar</a>
+  </nav>
+  <main id="root">
+    <p id="loading">Carregando...</p>
+  </main>
 
 
   <script>
@@ -37,13 +38,11 @@
 
 
       root.insertAdjacentHTML("afterbegin", markup)
-
+      loading.style.display = 'none';
     }
-
 
     getPoderes()
   </script>
 </body>
 
 </html>
-<!-- https://psychonauts-api.herokuapp.com/api/characters?name=razputin -->

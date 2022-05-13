@@ -18,8 +18,13 @@
 </head>
 
 <body>
+  <nav>
+    <a href=" index.html">Voltar</a>
+  </nav>
 
-  <main id="root"></main>
+  <main id="root">
+    <p id="loading">Carregando...</p>
+  </main>
 
 
   <script>
@@ -29,6 +34,7 @@
 
 
       const root = document.getElementById('root')
+      const loading = document.getElementById('loading')
 
       data.forEach(power => {
         const markup = `
@@ -40,6 +46,7 @@
 
 
         root.insertAdjacentHTML("afterbegin", markup)
+        loading.style.display = 'none';
       });
     }
 
