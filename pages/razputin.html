@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    main {}
+  </style>
+
+  <title>Razputin</title>
+</head>
+
+<body>
+
+  <main id="root"></main>
+
+
+  <script>
+    async function getPoderes() {
+      const response = await fetch('https://psychonauts-api.herokuapp.com/api/characters?name=razputin')
+      const data = await response.json()
+
+
+      const root = document.getElementById('root')
+
+      const markup = `
+        <div>
+          <img src="${data.img}" alt=""/>
+            <p>${data.gender}</p>
+            <p>${data.name}</p>
+            
+        </div>
+        `;
+
+
+      root.insertAdjacentHTML("afterbegin", markup)
+
+    }
+
+
+    getPoderes()
+  </script>
+</body>
+
+</html>
+<!-- https://psychonauts-api.herokuapp.com/api/characters?name=razputin -->

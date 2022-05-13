@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    main {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1em;
+    }
+  </style>
+
+  <title>Personagens</title>
+</head>
+
+<body>
+
+  <main id="root"></main>
+
+
+  <script>
+    async function getPersonagens() {
+      const response = await fetch('https://psychonauts-api.herokuapp.com/api/characters?limit=20')
+      const data = await response.json()
+
+      const root = document.getElementById('root')
+
+      data.forEach(person => {
+        const image = document.createElement('img')
+        image.src = person.img
+        root.appendChild(image)
+      });
+    }
+
+
+    getPersonagens()
+  </script>
+</body>
+
+</html>
